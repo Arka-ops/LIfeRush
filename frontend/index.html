@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Ambulance Route Optimization</title>
+
+<!-- Leaflet CSS -->
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+>
+
+<!-- Custom CSS -->
+<link
+    rel="stylesheet"
+    href="/style.css"
+>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================================================= -->
+<!-- HEADER -->
+<!-- ================================================= -->
+
+<header>
+
+    <div class="header-content">
+
+        <div>
+
+            <h1>🚑 Ambulance Route Optimization</h1>
+
+            <p>
+                AI-powered traffic-aware emergency routing
+            </p>
+
+        </div>
+
+        <div class="status">
+
+            <span id="statusDot"></span>
+
+            <span id="statusText">
+                Backend Connected
+            </span>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================================================= -->
+<!-- MAIN CONTENT -->
+<!-- ================================================= -->
+
+<main>
+
+    <!-- LEFT CONTROL PANEL -->
+
+    <section class="control-panel">
+
+        <h2>Route Planning</h2>
+
+        <p class="description">
+            Enter the source and destination coordinates
+            to find the fastest route considering traffic.
+        </p>
+
+
+        <!-- SOURCE LOCATION -->
+
+<div class="input-group">
+
+    <label>
+        📍 Source Location
+    </label>
+
+    <input
+        type="text"
+        id="sourceLocation"
+        placeholder="e.g. Howrah Railway Station"
+    >
+
+    <small id="sourceCoordinates">
+        Enter a source location
+    </small>
+
+</div>
+
+
+<!-- DESTINATION LOCATION -->
+
+<div class="input-group">
+
+    <label>
+        📍 Destination Location
+    </label>
+
+    <input
+        type="text"
+        id="destinationLocation"
+        placeholder="e.g. Salt Lake Sector V"
+    >
+
+    <small id="destinationCoordinates">
+        Enter a destination location
+    </small>
+
+</div>
+
+
+        <!-- BUTTON -->
+
+        <button
+            id="optimizeBtn"
+            onclick="optimizeRoute()"
+        >
+
+            🚑 Find Best Route
+
+        </button>
+
+
+        <!-- LOADING -->
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Analyzing routes with YOLO...
+            </p>
+
+            <small>
+                Please wait while traffic is analyzed.
+            </small>
+
+        </div>
+
+
+        <!-- ERROR -->
+
+        <div
+            id="errorBox"
+            class="error hidden"
+        >
+        </div>
+
+
+        <!-- BEST ROUTE -->
+
+        <div
+            id="resultPanel"
+            class="result-panel hidden"
+        >
+
+            <h2>🚑 Optimized Route</h2>
+
+
+            <div class="best-route-name">
+
+                <span>Best Route</span>
+
+                <strong id="bestRoute">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="result-grid">
+
+                <div class="result-card">
+
+                    <span>Distance</span>
+
+                    <strong id="distance">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <span>Duration</span>
+
+                    <strong id="duration">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <span>Traffic Score</span>
+
+                    <strong id="trafficScore">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="result-card">
+
+                    <span>Vehicles</span>
+
+                    <strong id="vehicleCount">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="congestion"
+                class="congestion"
+            >
+                -
+            </div>
+
+        </div>
+
+
+        <!-- ROUTE COMPARISON -->
+
+        <div
+            id="routesPanel"
+            class="routes-panel hidden"
+        >
+
+            <h2>Available Routes</h2>
+
+            <div id="routesList"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAP -->
+
+    <section class="map-container">
+
+        <div id="map"></div>
+
+    </section>
+
+</main>
+
+
+<!-- Leaflet JS -->
+
+<script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
+
+<!-- Custom JavaScript -->
+
+<script src="/script.js"></script>
+```
+
+</body>
+
+</html>

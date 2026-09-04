@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+
+/* ================================================= */
+/* HEADER */
+/* ================================================= */
+
+header {
+    background: #111827;
+    color: white;
+    padding: 18px 30px;
+}
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+
+header p {
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+
+#statusDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #22c55e;
+}
+
+
+/* ================================================= */
+/* MAIN */
+/* ================================================= */
+
+main {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    height: calc(100vh - 85px);
+}
+
+
+/* ================================================= */
+/* CONTROL PANEL */
+/* ================================================= */
+
+.control-panel {
+    background: white;
+    padding: 25px;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+}
+
+
+.control-panel h2 {
+    margin-bottom: 10px;
+}
+
+
+.description {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+/* ================================================= */
+/* INPUTS */
+/* ================================================= */
+
+.input-group {
+    margin-bottom: 14px;
+}
+
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+
+/* ================================================= */
+/* BUTTON */
+/* ================================================= */
+
+button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 8px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #dc2626;
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+    background: #b91c1c;
+}
+
+
+button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+
+/* ================================================= */
+/* LOADING */
+/* ================================================= */
+
+.loading {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: #eff6ff;
+    border-radius: 8px;
+}
+
+
+.spinner {
+    width: 30px;
+    height: 30px;
+
+    margin: auto;
+    margin-bottom: 10px;
+
+    border: 4px solid #dbeafe;
+    border-top: 4px solid #2563eb;
+
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ================================================= */
+/* RESULT */
+/* ================================================= */
+
+.result-panel {
+    margin-top: 20px;
+    padding: 18px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+}
+
+
+.best-route-name {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 15px 0;
+}
+
+
+.best-route-name strong {
+    color: #15803d;
+}
+
+
+/* ================================================= */
+/* RESULT CARDS */
+/* ================================================= */
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+.result-card {
+    background: white;
+    padding: 12px;
+    border-radius: 7px;
+}
+
+
+.result-card span {
+    display: block;
+    font-size: 12px;
+    color: #64748b;
+}
+
+
+.result-card strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 16px;
+}
+
+
+/* ================================================= */
+/* CONGESTION */
+/* ================================================= */
+
+.congestion {
+    margin-top: 12px;
+
+    text-align: center;
+
+    padding: 9px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+}
+
+
+/* ================================================= */
+/* ROUTES */
+/* ================================================= */
+
+.routes-panel {
+    margin-top: 20px;
+}
+
+
+.routes-panel h2 {
+    margin-bottom: 10px;
+}
+
+
+.route-card {
+    padding: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 8px;
+
+    margin-bottom: 8px;
+
+    cursor: pointer;
+}
+
+
+.route-card:hover {
+    background: #eef2ff;
+}
+
+
+.route-card.best {
+    border: 2px solid #16a34a;
+    background: #f0fdf4;
+}
+
+
+.route-title {
+    display: flex;
+    justify-content: space-between;
+
+    font-weight: bold;
+}
+
+
+.route-details {
+    font-size: 12px;
+    color: #64748b;
+
+    margin-top: 6px;
+}
+
+
+/* ================================================= */
+/* ERROR */
+/* ================================================= */
+
+.error {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    color: #b91c1c;
+
+    border-radius: 7px;
+
+    font-size: 13px;
+}
+
+
+/* ================================================= */
+/* MAP */
+/* ================================================= */
+
+.map-container {
+    position: relative;
+}
+
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ================================================= */
+/* UTILITY */
+/* ================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ================================================= */
+/* MOBILE */
+/* ================================================= */
+
+@media (max-width: 800px) {
+
+    main {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .map-container {
+        height: 500px;
+    }
+
+    .control-panel {
+        border-right: none;
+    }
+
+}
